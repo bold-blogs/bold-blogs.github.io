@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A sample blog post on BOLD BLOGS.">
+    <meta name="keywords" content="blog, BOLD BLOGS, sample post, linear regression, Python, scikit-learn">
+    <title>Blog Post Title 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .post-content {
+            line-height: 1.6;
+        }
+
+        .code-block {
+            position: relative;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>BOLD BLOGS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h2>Linear Regression</h2>
+        <div class="post-meta">Posted on May 18, 2024 by GURU DHARSAN</div>
+        <div class="post-content">
+            <p>Welcome to Bold blog! Today, we are going to learn how to make a simple math model called linear regression using Python. Linear regression is a basic way to make predictions based on data.</p>
+            <p>Linear regression helps us find a straight line that best matches the points on a graph. One variable (number) is the cause, and the other is the effect. For example, if you want to predict how tall a plant will grow based on the amount of water it gets, linear regression can help us figure that out.</p>
+
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <pre><code># Import necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Generate some sample data
+np.random.seed(0)
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+# Print the coefficients
+print('Coefficients:', model.coef_)
+print('Intercept:', model.intercept_)
+print('Mean squared error:', mse)
+print('R2 score:', r2)
+
+# Plot the results
+plt.scatter(X_test, y_test, color='black')
+plt.plot(X_test, y_pred, color='blue', linewidth=3)
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Linear Regression')
+plt.show()</code></pre>
+            </div>
+            <div class="outro">
+                <h3>Wrapping Up</h3>
+                <p>In this blog post, we learned how to build a simple linear regression model using Python and the scikit-learn library. We covered the following key points:</p>
+                <ul>
+                    <li>Linear regression is a fundamental machine learning technique used for predicting a continuous target variable based on one or more input features.</li>
+                    <li>The scikit-learn library in Python provides a straightforward implementation of linear regression through the <code>LinearRegression</code> class.</li>
+                    <li>We split the data into training and testing sets to evaluate the model's performance on unseen data.</li>
+                    <li>The <code>mean_squared_error</code> and <code>r2_score</code> metrics help us assess how well the model fits the data and make predictions.</li>
+                    <li>Visualizing the predicted line against the actual data points gives us a clear understanding of the model's behavior.</li>
+                </ul>
+                <p>Linear regression is a great starting point for machine learning and provides a solid foundation for understanding more advanced techniques. While it may seem simple, it is a powerful tool that can be applied to a wide range of real-world problems.</p>
+                <p>I hope this blog post has helped you understand linear regression and its implementation in Python. Feel free to explore further by experimenting with different datasets and applying what you've learned to solve your own problems.</p>
+                <p>Keep learning and exploring the exciting world of machine learning!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>BOLD BLOGS &copy; 2024</p>
+    </footer>
+
+    <script>
+        function copyCode() {
+            const code = document.querySelector('.code-block pre code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
