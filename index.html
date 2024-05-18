@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOLD BLOGS</title>
     <style>
+/* General Styles */
+/* General Styles */
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -159,14 +161,37 @@ ul li a:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-/* .content {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
 
-.content:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-} */
+/* Android Styles */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .sidebar,
+    .topics {
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
     </style>
 </head>
 <body>
